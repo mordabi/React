@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Person from './Person/Person'
-import './App.css';
+import classess from'./App.css';
 //import Radium ,{StyleRoot} from 'radium';
 
 class App extends Component {
@@ -77,20 +77,19 @@ class App extends Component {
     let classes = [];
     if(this.state.persons.length<=2)
     {
-      classes.push('red');
+      classes.push(classess.red);
     }
     if(this.state.persons.length<=1)
     {
-       classes.push('bold');
+       classes.push(classess.bold);
     }
     return (
-      <div className="App">
+      <div className={classess.App}>
         <h1>hi im react App</h1>
         <button style={style} onClick={this.togglePersonElement} >Toggle persons</button>
         {persons}
         <p className={classes.join(' ')}>fuck yeaaa</p>
       </div>
-
     );
     //return React.createElement('div',{className:'App'},React.createElement('h1',null,'Hi I\'m a React App ') );
   }
